@@ -1,0 +1,20 @@
+Realizar a mesma atividade do exercício 01 do módulo 06 com a diferença que os JSPs criados devem usar apenas
+tags JSTL e expressões EL, não podendo conter scriptlets, declarations ou expressions.
+
+Exercícios com apoio do professor.
+
+Enunciado do exercício anterior
+
+Criar página que contém formulário com os campos de texto: nome e valor.
+Quando os dados do formulário forem submetidos ao servidor um servlet
+deverá processar a requisição.
+A aplicação deve ler os dados submetidos e inserir um atributo no contexto context. 
+O nome e o valor deste atributo deverão ser os mesmos digitados no formulário.
+A aplicação deve ter uma página que exiba a lista de atributos presentes no contexto context.
+Para acessar esta página deve usar a URL de um servlet que disponibilizará os dados para a página JSP.
+
+Obs 1: Ao listar os atributos do escopo context pode ocorrer de exibir atributos que não foram adicinados por você. 
+Estes atributos são de uso interno do container.
+Obs 2: Os valores dos atributos do escopo context não são necessariamente strings.
+Eles podem ser qualquer tipo de objeto.
+Utilizar o método toString() para converter o valor de atributo numa representação em forma de string. 
