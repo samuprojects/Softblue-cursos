@@ -1,0 +1,13 @@
+Exercício com o apoio do professor
+
+Implementar um processo fictício de cadastro de usuário.
+O processo todo é compor 3 telas.
+Na primeira tela solicitar o e-mail.
+Na segunda tela o nome do usuário.
+na terceira tela o telefone.
+
+Cada uma das telas deve possuir botão “Próximo” para levar o usuário à próxima tela do cadastro.
+Após o envio dos dados da terceira tela levar o usuário para uma tela que exibindo todos os dados digitados nas telas anteriores em uma tabela.
+Deve haver um servlet responsável para armazenar os dados digitados pelo usuário entre as telas.
+Os dados devem estar disponíveis entre diversas requisições e devem pertencer a um usuário específico.
+Eles devem ser armazenados na sessão do usuário. 
