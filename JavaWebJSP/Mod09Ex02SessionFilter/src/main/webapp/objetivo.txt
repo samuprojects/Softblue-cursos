@@ -1,0 +1,9 @@
+Exercício com orientação professor
+
+Implementar filter com objetivo de fazer um log no console dos atributos presentes na session do usuário
+(quando ele fizer qualquer requisição ao servidor).
+Para testar o funcionamento do filter, criar um JSP com um formulário para fornecer um nome e valor para o atributo a ser adicionado à session.
+Ao submeter este formulário, a requisição deverá chegar a um servlet, que tem por objetivo adicionar os
+dados digitados como um atributo da session e direcionar você novamente para o mesmo JSP.
+Acompanhar no console as mensagens de log sendo mostradas.
+Para implementar o log você pode usar a chamada System.out.println() ou a API Logger do Java, caso tenha familiaridade com ela.
