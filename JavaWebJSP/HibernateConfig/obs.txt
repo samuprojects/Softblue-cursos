@@ -1,0 +1,30 @@
+alterações em relação a versão do professor
+my sql na versão 8 alterado os seguintes arquivos 
+
+hibernate.cfg.xml, inserido caminho completo na url
+<property name="connection.url">
+      jdbc:mysql://localhost:3306/db?useLegacyDatetimeCode=false&amp;serverTimezone=America/Sao_Paulo&amp;useSSL=false
+    </property>
+    
+na parte da senha alterar para o do banco atual
+     <property name="connection.username">root</property>
+    <property name="connection.password">admin</property>
+    
+em relação ao dialect modificado para
+<property name="dialect">
+      org.hibernate.dialect.MySQL8Dialect
+    </property>
+    
+
+Produto.hbm.xml, alterado os nomes dos mapeamentos de table e column para minúsculo
+pois na versão do professor estava em maiúsculo que foi incluído na configuração dele em minúsculo o que não ocorreu na minha versão.
+como ficou:
+<hibernate-mapping package="hibernate">
+	<class name="Produto" table="produto">
+		<id name="id" column="id">
+			<generator class="native" />
+		</id>
+
+		<property name="nome" column="nome" not-null="true" />
+	</class>
+</hibernate-mapping>
