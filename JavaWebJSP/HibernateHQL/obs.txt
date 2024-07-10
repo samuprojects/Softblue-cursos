@@ -1,0 +1,104 @@
+código utilizado na classe executável para popular as tabelas do banco apresentados no ínicio da explicação
+baseado nos códigos de inserção da aula passada, para seguir com as consultas em hql
+
+public class Aplicacao {
+
+	public static void main(String[] args) throws Exception {
+
+		Configuration cfg = new Configuration().configure();
+		SessionFactory sf = cfg.buildSessionFactory();
+		Session session = sf.getCurrentSession();
+
+		session.beginTransaction();
+
+		Cliente c1 = new Cliente();
+		c1.setNome("Cliente 1");
+		session.save(c1);
+		
+		Cliente c2 = new Cliente();
+		c2.setNome("Cliente 2");
+		session.save(c2);
+		
+		Cliente c3 = new Cliente();
+		c3.setNome("Cliente 3");
+		session.save(c3);
+		
+		Cliente c4 = new Cliente();
+		c4.setNome("Cliente 4");
+		session.save(c4);
+
+		RG rg1 = new RG();
+		rg1.setNumero("1111111");
+		rg1.setDataExpedicao(new Date());
+		rg1.setCliente(c1);
+		session.save(rg1);
+		
+		RG rg2 = new RG();
+		rg2.setNumero("2222222");
+		rg2.setDataExpedicao(new Date());
+		rg2.setCliente(c2);
+		session.save(rg2);
+		
+		RG rg3 = new RG();
+		rg3.setNumero("3333333");
+		rg3.setDataExpedicao(new Date());
+		rg3.setCliente(c3);
+		session.save(rg3);
+		
+		RG rg4 = new RG();
+		rg4.setNumero("4444444");
+		rg4.setDataExpedicao(new Date());
+		rg4.setCliente(c4);
+		session.save(rg4);
+
+		Editora e1 = new Editora();
+		e1.setNome("Editora 1");
+		session.save(e1);
+		
+		Editora e2 = new Editora();
+		e2.setNome("Editora 2");
+		session.save(e2);
+
+		Livro l1 = new Livro();
+		l1.setNome("Livro 1");
+		l1.setAutor("Autor 1");
+		l1.setIsbn("1111");
+		l1.setEditora(e1);
+		session.save(l1);
+		
+		Livro l2 = new Livro();
+		l2.setNome("Livro 2");
+		l2.setAutor("Autor 2");
+		l2.setIsbn("2222");
+		l2.setEditora(e1);
+		session.save(l2);
+		
+		Livro l3 = new Livro();
+		l3.setNome("Livro 3");
+		l3.setAutor("Autor 3");
+		l3.setIsbn("3333");
+		l3.setEditora(e1);
+		session.save(l3);
+		
+		Livro l4 = new Livro();
+		l4.setNome("Livro 4");
+		l4.setAutor("Autor 4");
+		l4.setIsbn("4444");
+		l4.setEditora(e2);
+		session.save(l4);
+
+		l1.getClientes().add(c1);
+		l3.getClientes().add(c1);
+		l2.getClientes().add(c2);		
+
+		session.getTransaction().commit();
+	}
+	
+	observado que a tag
+	    <property name="hibernate.hbm2ddl.auto">create</property>
+	no projeto do professor foi excluída.
+	observado isso após tentativa de busca com hql onde os dados do banco foram apagados.
+	em buscas foi encontrado que se for para manter a tag mudar a opção para update em cenários de testes ou desenvolvimento
+	para não perder os dados populados.
+
+}
