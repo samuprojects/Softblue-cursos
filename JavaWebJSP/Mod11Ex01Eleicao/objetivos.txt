@@ -1,0 +1,20 @@
+Exercício com apoio do professor
+
+Implementar as entidades e arquivos de mapeamento do Hibernate de forma a simular um processo eleitoral.
+As entidades com seus atributos e as associações entre elas podem ser vistas no diagrama anexado ao projeto.
+(Arquivo DiagramaEleicao.png)
+Após a implementação do modelo, criar a classe InserirDados que possui um método main().
+Ao ser executado, este método é responsável por criar as entidades no banco de dados.
+Os dados devem refletir o que está contido na foto da tabela anexado ao projeto.
+(Arquivo FotoTabelaEleitor.png)
+Criar uma classe ConsultarDados com um método main().
+Ao ser executada, deve fazer busca nas entidades cadastradas no banco de dados.
+Os dados a serem extraídos são:
+
+1. Listar o nome de todos os candidatos a presidente.
+A lista deve ser ordenada pelo nome dos candidatos.
+
+2. Listar os candidatos e seus respectivos cargos nos quais o eleitor, cujo título é 56723, votou.
+
+3. Mostrar o nome de cada candidato votado junto com o número de votos que recebeu.
+(dica: usar o COUNT(*) e o GROUP BY para fazer a contagem dos votos).
