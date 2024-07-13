@@ -1,0 +1,105 @@
+Exemplo a parte de classe utilizada para popular dados no banco de modelo da aula
+
+package util;
+
+import org.hibernate.Session;
+
+import entity.Aluno;
+import entity.Sala;
+import entity.Turma;
+
+public class PopulaDadosExemplo {
+
+	public static void main(String[] args) {
+		HibernateUtil.beginTransaction();
+		Session session = HibernateUtil.getSession();
+
+		try {
+			
+			Sala sala10 = new Sala();
+			sala10.setNumero(10);
+			sala10.setCapacidade(2);
+			session.save(sala10);
+
+			Sala sala11 = new Sala();
+			sala11.setNumero(11);
+			sala11.setCapacidade(5);
+			session.save(sala11);
+
+			Sala sala12 = new Sala();
+			sala12.setNumero(12);
+			sala12.setCapacidade(25);
+			session.save(sala12);
+
+			Sala sala13 = new Sala();
+			sala13.setNumero(13);
+			sala13.setCapacidade(10);
+			session.save(sala13);
+
+			
+			Turma turma10 = new Turma();
+			turma10.setId(10);
+			turma10.setNome("8A");
+			turma10.setSala(sala10);
+			session.save(turma10);
+
+			Turma turma11 = new Turma();
+			turma11.setId(11);
+			turma11.setNome("68");
+			turma11.setSala(sala11);
+			session.save(turma11);
+
+			Turma turma12 = new Turma();
+			turma12.setId(12);
+			turma12.setNome("6C");
+			turma12.setSala(sala12);
+			session.save(turma12);
+
+			Turma turma13 = new Turma();
+			turma13.setId(13);
+			turma13.setNome("4A");
+			turma13.setSala(sala13);
+			session.save(turma13);
+
+			
+			Aluno aluno1 = new Aluno();
+			aluno1.setMatricula("27539");
+			aluno1.setNome("José da Silva");
+			session.save(aluno1);
+
+			Aluno aluno2 = new Aluno();
+			aluno2.setMatricula("33246");
+			aluno2.setNome("João Freitas");
+			session.save(aluno2);
+
+			Aluno aluno3 = new Aluno();
+			aluno3.setMatricula("54432");
+			aluno3.setNome("Carlos Tosin");
+			aluno3.setSala(sala10);
+			session.save(aluno3);
+
+			Aluno aluno4 = new Aluno();
+			aluno4.setMatricula("78392");
+			aluno4.setNome("Joana Ribas");
+			session.save(aluno4);
+
+			Aluno aluno5 = new Aluno();
+			aluno5.setMatricula("86985");
+			aluno5.setNome("André Milani");
+			session.save(aluno5);
+
+			Aluno aluno6 = new Aluno();
+			aluno6.setMatricula("89932");
+			aluno6.setNome("Maria do Nascimento");
+			session.save(aluno6);
+
+			HibernateUtil.commitTransaction();
+			System.out.println("Dados populados com sucesso!");
+		} catch (Exception e) {
+			HibernateUtil.rollbackTransaction();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+	}
+}
