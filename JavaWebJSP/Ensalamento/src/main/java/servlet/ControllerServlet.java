@@ -46,8 +46,8 @@ private static Properties actions;
 		}
 			
 		try {
-			@SuppressWarnings("deprecation")
-			Action action = (Action) Class.forName(actionClass).newInstance();
+			
+			Action action = (Action) Class.forName(actionClass).getDeclaredConstructor().newInstance(); // incluído getDeclaredConstructor() devido atualização java
 			action.setRequest(request);
 			action.setResponse(response);
 			action.runAction();
