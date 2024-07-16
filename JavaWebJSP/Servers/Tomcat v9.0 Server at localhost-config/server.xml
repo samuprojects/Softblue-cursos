@@ -77,6 +77,9 @@
          Either JSSE or OpenSSL style configuration may be used regardless of
          the SSLImplementation selected. JSSE style configuration is used below.
     -->
+    
+     <Connector SSLEnabled="true" clientAuth="false" keystoreFile="/home/user/caminhopodemudar/chaveSSL/.keystore" keystorePass="tomcat" maxThreads="150" port="8443" protocol="HTTP/1.1" scheme="https" secure="true" sslProtocol="TLS"/>
+    
     <!--
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
                maxThreads="150" SSLEnabled="true"
@@ -160,7 +163,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="SecurityResources" path="/SecurityResources" reloadable="true" source="org.eclipse.jst.jee.server:SecurityResources"/></Host>
+      <Context docBase="SecuritySSL" path="/SecuritySSL" reloadable="true" source="org.eclipse.jst.jee.server:SecuritySSL"/></Host>
     </Engine>
   </Service>
 </Server>
