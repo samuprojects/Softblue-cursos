@@ -78,7 +78,7 @@
          the SSLImplementation selected. JSSE style configuration is used below.
     -->
     
-     <Connector SSLEnabled="true" clientAuth="false" keystoreFile="/home/user/caminhopodemudar/chaveSSL/.keystore" keystorePass="tomcat" maxThreads="150" port="8443" protocol="HTTP/1.1" scheme="https" secure="true" sslProtocol="TLS"/>
+    <!-- <Connector SSLEnabled="false" clientAuth="false" keystoreFile="/home/user/caminhopodemudar/chaveSSL/.keystore" keystorePass="tomcat" maxThreads="150" port="8443" protocol="HTTP/1.1" scheme="https" secure="true" sslProtocol="TLS"/>  -->
     
     <!--
     <Connector port="8443" protocol="org.apache.coyote.http11.Http11NioProtocol"
