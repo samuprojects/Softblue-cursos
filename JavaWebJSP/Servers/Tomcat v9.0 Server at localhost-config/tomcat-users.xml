@@ -43,14 +43,15 @@
   them. You will also need to set the passwords to something appropriate.
 -->
 
+<!--
   <role rolename="tomcat"/>
   <role rolename="role1"/>
-  <role rolename="manager"/>
   <user username="tomcat" password="tomcat" roles="tomcat"/>
   <user username="both" password="tomcat" roles="tomcat,role1"/>
   <user username="role1" password="tomcat" roles="role1"/>
-  <user username="tomcat" password="tomcat" roles="manager"/>
+-->
 
-  <user username="samuel" password="s" roles="admin" />
+  <role rolename="admin"/>
+  <user username="adm" password="123" roles="admin" />
   
 </tomcat-users>
